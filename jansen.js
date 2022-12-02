@@ -1518,9 +1518,9 @@ function _0x5385(_0x2ab646,_0x156951){var _0x3a233e=_0x3a23();return _0x5385=fun
 }
 break
 //=================================================//
-case prefix+"verif": {
-  var axioss = require ("axios")
-  let ntah = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+case 'verif': {
+var axioss = require ("axios")
+let ntah = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
 let cookie = ntah.headers["set-cookie"].join("; ")
 let $ = cheerio.load(ntah.data)
